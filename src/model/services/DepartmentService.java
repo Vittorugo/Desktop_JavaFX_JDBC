@@ -14,4 +14,13 @@ public class DepartmentService{
 		return dao.findAll();
 	}
 	
+	// this method saves or update the database by checking id 
+	public void saveOrUpdate(Department department) {
+		if(department.getId() == null) {
+			dao.insert(department);
+		} else {
+			dao.update(department);
+		}
+	}
+	
 }
